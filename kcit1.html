@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCIT Computer Institute | Empowering Future IT Leaders</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            900: '#0A192F',
+                            800: '#112240',
+                            700: '#1D3557',
+                        },
+                        brand: {
+                            blue: '#0284C7',
+                            sky: '#38BDF8',
+                            accent: '#F59E0B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-sky-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-navy-900 text-slate-200 text-xs sm:text-sm py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center text-sky-400 font-medium">
+                    <i class="fa-solid fa-bullhorn mr-2"></i> Admissions Open for 2026-27 Batch!
+                </span>
+                <span class="hidden md:inline text-slate-400">|</span>
+                <span class="hidden md:inline text-slate-300">ISO 9001:2015 Certified & Govt. Recognized Training Center</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:7905626191" class="hover:text-sky-400 transition flex items-center">
+                    <i class="fa-solid fa-phone mr-1.5 text-sky-400"></i> +91 98765 43210
+                </a>
+                <a href="mailto:kcitjarwal@rediffmail.com" class="hidden sm:flex hover:text-sky-400 transition items-center">
+                    <i class="fa-solid fa-envelope mr-1.5 text-sky-400"></i> admissions@kcitinstitute.edu.in
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-navy-900 via-blue-800 to-sky-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-laptop-code text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-navy-900 block leading-none">
+                            KCIT
+                        </span>
+                        <span class="text-[11px] sm:text-xs font-bold tracking-widest text-brand-blue uppercase block mt-0.5">
+                            Computer Institute
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition">Home</a>
+                    <a href="#courses" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition">Courses</a>
+                    <a href="#facilities" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition">Facilities</a>
+                    <a href="#verify-certificate" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition">Verify Certificate</a>
+                    <a href="#about" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition">About Us</a>
+                    <a href="#contact" class="text-sm font-semibold text-slate-700 hover:text-brand-blue transition">Contact</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <button onclick="openEnquiryModal('General Admission')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-navy-900 to-brand-blue hover:from-brand-blue hover:to-navy-900 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2 cursor-pointer">
+                        <span>Enroll Now</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" aria-label="Toggle Menu" class="p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 pt-3 pb-6 space-y-2 shadow-xl">
+            <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-brand-blue">Home</a>
+            <a href="#courses" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-brand-blue">Courses</a>
+            <a href="#facilities" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-brand-blue">Facilities</a>
+            <a href="#verify-certificate" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-brand-blue">Verify Certificate</a>
+            <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-brand-blue">About Us</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-xl text-base font-medium text-slate-700 hover:bg-sky-50 hover:text-brand-blue">Contact</a>
+            <div class="pt-3 px-2">
+                <button onclick="openEnquiryModal('General Admission')" class="w-full py-3 rounded-xl bg-brand-blue text-white font-semibold text-center shadow-md">
+                    Enroll Now
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-slate-900 text-white py-16 sm:py-24 lg:py-28">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-sky-500/10 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-600/15 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-xs sm:text-sm font-medium">
+                        <span class="w-2 h-2 rounded-full bg-sky-400 mr-2 animate-pulse"></span>
+                        Leading IT & Computer Education Center
+                    </div>
+                    
+                    <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Master Modern Tech at <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-300">KCIT Computer Institute</span>
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Empowering students and professionals with industry-ready IT skills, 100% hands-on practical lab sessions, globally recognized certifications, and dedicated career placement support.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#courses" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-brand-blue hover:bg-sky-500 text-white font-semibold shadow-lg shadow-sky-900/40 transition flex items-center justify-center gap-2">
+                            <span>Explore Courses</span>
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </a>
+                        <button onclick="openEnquiryModal('Free Demo Class')" class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold backdrop-blur-sm transition flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fa-solid fa-calendar-check text-sky-400"></i>
+                            <span>Book Free Demo Class</span>
+                        </button>
+                    </div>
+
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs sm:text-sm text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>NIELIT / ISO Certified</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>100% Practical Training</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+                            <span>Job Placement Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="rounded-2xl bg-gradient-to-b from-slate-800/90 to-navy-900/90 border border-slate-700/70 p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+                            <div class="flex items-center justify-between border-b border-slate-700/80 pb-4 mb-6">
+                                <div class="flex items-center space-x-2">
+                                    <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+                                    <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">KCIT_Lab_Portal.exe</span>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-code text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-white text-sm sm:text-base">Software & Full Stack</h3>
+                                        <p class="text-xs text-slate-400">Python, Web Dev, C/C++, Java & SQL</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-calculator text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-white text-sm sm:text-base">Accounting & Office Automation</h3>
+                                        <p class="text-xs text-slate-400">ADCA, DCA, Tally Prime with GST & CCC</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                                        <i class="fa-solid fa-bezier-curve text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-white text-sm sm:text-base">Creative Design & Multimedia</h3>
+                                        <p class="text-xs text-slate-400">Photoshop, CorelDRAW, UI/UX & Video Editing</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-5 border-t border-slate-700/80 flex items-center justify-between">
+                                <div>
+                                    <p class="text-xs text-slate-400">Next Batch Starts</p>
+                                    <p class="text-sm font-bold text-sky-400">Every Monday (Morning & Evening)</p>
+                                </div>
+                                <button onclick="openEnquiryModal('Batch Schedule')" class="px-3.5 py-2 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 text-xs font-semibold transition cursor-pointer">
+                                    Get Syllabus
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="relative z-20 -mt-8 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+            <div class="space-y-1">
+                <p class="font-display text-2xl sm:text-4xl font-extrabold text-navy-900">5,000+</p>
+                <p class="text-xs sm:text-sm font-medium text-slate-500">Students Trained</p>
+            </div>
+            <div class="space-y-1 lg:border-l border-slate-200">
+                <p class="font-display text-2xl sm:text-4xl font-extrabold text-brand-blue">20+</p>
+                <p class="text-xs sm:text-sm font-medium text-slate-500">Job-Oriented Courses</p>
+            </div>
+            <div class="space-y-1 lg:border-l border-slate-200">
+                <p class="font-display text-2xl sm:text-4xl font-extrabold text-navy-900">12+ Yrs</p>
+                <p class="text-xs sm:text-sm font-medium text-slate-500">Academic Excellence</p>
+            </div>
+            <div class="space-y-1 lg:border-l border-slate-200">
+                <p class="font-display text-2xl sm:text-4xl font-extrabold text-emerald-600">94%</p>
+                <p class="text-xs sm:text-sm font-medium text-slate-500">Placement Assistance</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Courses Section -->
+    <section id="courses" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-brand-blue font-bold text-xs sm:text-sm uppercase tracking-wider">Career-Focused Curriculum</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">
+                    Our Popular Computer Courses
+                </h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Choose from foundational diplomas to advanced software development programs designed to meet modern industry standards.
+                </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10" id="course-filters">
+                <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-sm font-semibold bg-navy-900 text-white shadow-sm transition cursor-pointer">
+                    All Courses
+                </button>
+                <button data-filter="diploma" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition cursor-pointer">
+                    Diploma & Govt.
+                </button>
+                <button data-filter="programming" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition cursor-pointer">
+                    Coding & Data
+                </button>
+                <button data-filter="accounting" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition cursor-pointer">
+                    Accounting & Design
+                </button>
+            </div>
+
+            <div id="courses-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Cards injected dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificate Verification Section (NEWLY ADDED BY ROLL NO) -->
+    <section id="verify-certificate" class="py-20 bg-white border-y border-slate-200/70">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-brand-blue font-bold text-xs sm:text-sm uppercase tracking-wider">Authenticity Check</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">
+                    Verify Student Certificate
+                </h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    Enter your Roll Number or Registration ID below to verify the genuineness of your KCIT computer course certificate. (Try demo roll no: <strong class="text-brand-blue">KCIT/2026/101</strong>)
+                </p>
+            </div>
+
+            <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <form id="certificate-verify-form" class="flex flex-col sm:flex-row gap-3">
+                    <input type="text" id="roll-number-input" required placeholder="Enter Roll Number (e.g., KCIT/2026/101)" class="flex-1 px-4 py-3 rounded-xl border border-slate-300 focus:border-brand-blue focus:ring-2 focus:ring-sky-200 outline-none text-sm bg-white">
+                    <button type="submit" class="px-7 py-3 rounded-xl bg-navy-900 hover:bg-brand-blue text-white font-semibold text-sm shadow-md transition flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Verify Now</span>
+                    </button>
+                </form>
+
+                <!-- Result Box -->
+                <div id="verify-result" class="hidden mt-6 p-6 rounded-xl bg-white border border-slate-200 shadow-sm">
+                    <!-- Data will be populated here dynamically -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose KCIT / Facilities Section -->
+    <section id="facilities" class="py-20 bg-slate-50 border-b border-slate-200/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="text-brand-blue font-bold text-xs sm:text-sm uppercase tracking-wider">Why Choose KCIT</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">
+                    World-Class Lab Facilities & Learning Environment
+                </h2>
+                <p class="text-slate-600 mt-3 text-sm sm:text-base">
+                    We bridge the gap between theoretical knowledge and real-world corporate expectations through dedicated infrastructure.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-7 rounded-2xl bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-sky-100 text-brand-blue flex items-center justify-center text-2xl mb-5 group-hover:bg-brand-blue group-hover:text-white transition">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy-900 mb-2">Modern High-Speed Labs</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        1:1 student-to-computer ratio equipped with latest Core i5/i7 workstations, high-speed fiber internet, and licensed development software.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-100 text-navy-900 flex items-center justify-center text-2xl mb-5 group-hover:bg-navy-900 group-hover:text-white transition">
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy-900 mb-2">Certified & Expert Faculty</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Learn directly from industry-experienced instructors who provide personalized mentorship, doubt-clearing sessions, and project reviews.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-2xl mb-5 group-hover:bg-emerald-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy-900 mb-2">Recognized Certification</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Receive verifiable ISO-certified diplomas and government-valid certificates accepted across public and private sector recruitments.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-5 group-hover:bg-amber-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy-900 mb-2">100% Placement Support</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Dedicated placement cell offering resume building, mock interviews, soft-skills workshops, and direct tie-ups with local & national IT firms.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-2xl mb-5 group-hover:bg-indigo-600 group-hover:text-white transition">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy-900 mb-2">Flexible Batch Timings</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Convenient morning, afternoon, evening, and weekend batches tailored for school/college students and working professionals.
+                    </p>
+                </div>
+
+                <div class="p-7 rounded-2xl bg-white border border-slate-200/80 hover:border-brand-blue/40 hover:shadow-lg transition group">
+                    <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl mb-5 group-hover:bg-rose-
